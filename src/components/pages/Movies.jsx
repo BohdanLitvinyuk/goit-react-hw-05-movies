@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 const Movies = () => {
-  const [movie, setMovie] = useState([
+  const [movie] = useState([
     'movies-1',
     'movies-2',
     'movies-3',
