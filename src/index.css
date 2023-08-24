@@ -13,3 +13,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navLinkList{
+  list-style: none;
+  display: flex;
+  gap:15px;
+  text-decoration: none;
+}
+.navLinkItem{
+  text-decoration: none;
+}

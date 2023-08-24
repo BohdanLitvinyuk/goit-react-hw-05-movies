@@ -1,0 +1,11 @@
+.MovieList{
+    list-style: none;
+}
+.MovieListItem{
+    
+    margin-top: 8px;
+}
+.MovieListLink{
+    text-decoration: none;
+    color:dimgray
+}

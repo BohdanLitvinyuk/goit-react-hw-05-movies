@@ -1,33 +1,44 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
-
+import { getSearchMovie } from 'getFetch';
+import ItemList from 'components/MovieList/ItemList';
 const Movies = () => {
-  const [movie] = useState([
-    'movies-1',
-    'movies-2',
-    'movies-3',
-    'movies-4',
-  ]);
+  const [movie,setMovie] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  const movieId = searchParams.get('movieId') ?? '';
+  const searchQuery = searchParams.get('query') ?? '';
 
   const updateQueryString = evt => {
-    const movieIdValue = evt.target.value;
-    if (movieIdValue === '') {
+    const query= evt.target.value;
+    if (query === '') {
       return setSearchParams({});
     }
-    setSearchParams({ movieId: movieIdValue });
+    setSearchParams({ searchQuery: query });
   };
-  const visibleMovie = movie.filter(movie => movie.includes(movieId));
+  useEffect(() => {
+    const fetchMovieByQuery= async () => {
+      try {
+        const movieByQuery= await getSearchMovie(searchQuery);
+        // console.log(movieById);
+        setMovie(movieByQuery);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchMovieByQuery();
+  }, [searchQuery]);
+
+  const visibleMovie = movie.filter(movie => movie.includes(searchQuery));
   return (
     <div>
-      {' '}
       Список фільмів
       <input type="text" onChange={updateQueryString} />
+      <ItemList movie={movie}/>
+            
       <ul>
         {visibleMovie.map(movie => {
           return (
+            
             <li key={movie}>
               <Link to={`${movie}`} state={{ from: location }}>
                 {movie}

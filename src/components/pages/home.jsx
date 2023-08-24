@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {getTrendMovie} from 'getFetch';
-import ItemList from 'components/ItemList';
+import ItemList from 'components/MovieList/ItemList';
 const Home = () => {
     const [movie, setMovie]= useState([]);
 
