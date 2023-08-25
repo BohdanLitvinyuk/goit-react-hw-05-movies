@@ -9,8 +9,8 @@ export const getTrendMovie = async ()=>{
     return data.results;
 }
 
-export const getSearchMovie = async (query)=>{
-    const {data} = await axios.get(`search/movie?query=${query}&include_adult=false?api_key=${API_KEY}`);
+export const getSearchMovie = async query =>{
+    const {data} = await axios.get(`search/movie?query=${query}&include_adult=false&api_key=${API_KEY}`);
     return data.results;
 }
 

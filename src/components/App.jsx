@@ -1,8 +1,8 @@
 import {  Route, Routes } from 'react-router-dom';
 import MovieDetails from './MovieDetails';
-import Home from './pages/home';
-import Movies from './pages/Movies';
-import { Layout } from './pages/Layout';
+import Home from '../pages/home';
+import Movies from '../pages/Movies';
+import { Layout } from '../pages/Layout';
 
 export const App = () => {
   return (
