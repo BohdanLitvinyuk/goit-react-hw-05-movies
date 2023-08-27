@@ -1,3 +1,9 @@
 .movieCard{
     display: flex;
+    gap: 15px;
+    padding-top: 10px;
+}
+.MovieCardList{
+    list-style: none;
+    padding:0;
 }

@@ -1,6 +1,6 @@
 import { useState,useEffect} from 'react';
 import {  useSearchParams } from 'react-router-dom';
-import { getSearchMovie } from 'getFetch';
+import { getSearchMovie } from 'services/getFetch';
 import ItemList from 'components/MovieList/ItemList';
 const Movies = () => {
   const [movie, setMovie] = useState([]);
@@ -45,7 +45,7 @@ const fetchMovie=async()=>{
 
         <button type="submit"> Search </button>
       </form>
-      Список фільмів
+      
       <ItemList movie={movie} />
     </div>
   );

@@ -26,13 +26,13 @@ const MovieCard = ({ movie }) => {
       <h2> Overview</h2>
       <p>{overview}</p>
 
-      <ul>
+      <ul className="MovieCardList">
         <h3>Genres:</h3>
         {genres?.map(genre => (
           <li key={genre.id}>{genre.name}</li>
         ))}
       </ul>
-      <p>Additional Information</p>
+     
       </div>
       
     </div>

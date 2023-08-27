@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import { getMovieById } from 'getFetch';
-// import { getMovieById } from 'getFetch';
-import MovieCard from './MovieCard/MovieCard';
+import { getMovieById } from 'services/getFetch';
+import MovieCard from '../MovieCard/MovieCard';
+import './MovieDetails.css'
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -15,10 +15,8 @@ const MovieDetails = () => {
     const fetchMovieById = async () => {
       try {
         const movieById = await getMovieById(movieId);
-        // console.log(movieById);
         setMovie(movieById);
       } catch (error) {
-        console.log(error);
       }
     };
     fetchMovieById();
@@ -26,13 +24,14 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLinkLocationRef.current}>
+      <Link to={backLinkLocationRef.current} >
         <button>Go Back </button>
       </Link>
 
       <MovieCard movie={movie} />
-
-      <ul>
+<div className='aditionalList' >
+<p>Additional Information</p>
+   <ul >
         <li>
           <Link to="Cast"> Cast</Link>
         </li>
@@ -40,6 +39,7 @@ const MovieDetails = () => {
           <Link to="review"> Review</Link>
         </li>
       </ul>
+  </div>
       <Outlet />
     </>
   );
