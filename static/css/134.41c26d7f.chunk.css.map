@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/134.41c26d7f.chunk.css","mappings":"AAAA,WACI,eACJ,CACA,eAEI,cACJ,CACA,eAEI,aAAY,CADZ,oBAEJ","sources":["components/MovieList/MovieList.css"],"sourcesContent":[".MovieList{\n    list-style: none;\n}\n.MovieListItem{\n    \n    margin-top: 8px;\n}\n.MovieListLink{\n    text-decoration: none;\n    color:dimgray\n}"],"names":[],"sourceRoot":""}
